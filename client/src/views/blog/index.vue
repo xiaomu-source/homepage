@@ -5,7 +5,7 @@
       <div class="blog-l-content">
         <section class="blog-l-info">
           <img class="info-avatar lazy-image"
-               data-src="http://www.askme.do/public/avatar.jpg">
+               data-src="http://www.askme.do/static/avatar.jpg">
           <p class="info-title">{{ setting.websiteInfo.name }}的博客</p>
           <p class="info-title-sub">有趣的人记录有趣的事。 </p>
           <p class="info-title-sub ban-bred">

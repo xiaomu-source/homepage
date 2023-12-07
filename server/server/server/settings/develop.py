@@ -24,5 +24,5 @@ CACHES = {
 }
 SWAGGER = False
 
-HOST = f"www.askmedo.cn:3090"
+HOST = f"www.askmedo.cn"
 ALLOWED_HOSTS = ['43.138.64.251', 'askmedo.cn', 'www.askmedo.cn']
