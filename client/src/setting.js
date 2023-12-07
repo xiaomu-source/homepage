@@ -8,7 +8,7 @@ export default {
         occupation: "后端开发",
         occupationEn: "Back-end engineer",
         // logo仅支持在线地址
-        avatar: 'web:3090/media/avatar.jpg',
+        avatar: 'http://ww.askmedo.cn/media/avatar.jpg',
         wxMini:'web:3090/media/wxMin.jpg',
         notice:'很高兴到访我的个人主页。'
 
