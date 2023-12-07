@@ -16,17 +16,21 @@ then
   echo "打包前端资源"
   echo "admin 打包中..."
   cd ../admin/
+  rm -rf dist/
   npm run build
   echo "admin 打包成功"
   echo "client 打包中..."
   cd ../client/
+  rm -rf dist/
   npm run build
   echo "client 打包成功"
+  rm -rf ../server/compose/nginx/admin/dist/
+  rm -rf ../server/compose/nginx/client/dist/
   cp -rf ./dist/ ../server/compose/nginx/client/dist/
   cp -rf ../admin/dist/ ../server/compose/nginx/admin/dist/
   cp -rf ../admin/dist/assets ../server/compose/nginx/client/dist/assets
   cd ../server/
   exit 0
-if
+fi
 echo "启动服务。。。"
 docker-compose up

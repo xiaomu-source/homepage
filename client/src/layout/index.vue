@@ -24,14 +24,14 @@
           <div class="item-title">微信</div>
           <a-image
               :width="80"
-              src="web/media/wx.png"
+              src="web:3090/media/wx.png"
           />
         </div>
         <div class="info-item">
           <div class="item-title">QQ</div>
           <a-image
               :width="90"
-              src="web/media/qq.png"
+              src="web:3090/media/qq.png"
           />
         </div>
 
