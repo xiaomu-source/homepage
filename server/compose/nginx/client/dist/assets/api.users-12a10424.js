@@ -1,1 +1,0 @@
-import{a as e}from"./server-41ad1b27.js";const t=s=>e.post("/v1/sys/users/get-list/",s),u=s=>e.post("/v1/sys/users/create-user/",s),n=s=>e.post("/v1/sys/users/update-user/",s),o=s=>e.post("/v1/sys/users/delete-user/",s),a=s=>e.post("/v1/sys/users/reset/",s),p=s=>e.post("/v1/sys/users/findOne/",s);export{n as a,a as b,t as c,o as d,p as e,u};
