@@ -8,8 +8,8 @@ export default {
         occupation: "后端开发",
         occupationEn: "Back-end engineer",
         // logo仅支持在线地址
-        avatar: 'http://ww.askmedo.cn/media/avatar.jpg',
-        wxMini:'web:3090/media/wxMin.jpg',
+        avatar: 'http://www.askmedo.cn/media/avatar.jpg',
+        wxMini:'http://www.askmedo.cn/media/wxMin.jpg',
         notice:'很高兴到访我的个人主页。'
 
     },
@@ -19,8 +19,8 @@ export default {
         github:'https://github.com/xiaomu-source',
         city:'上海·浦东新区',
         age:'26',
-        wx:'web:3090/media/wx.png',
-        qq:'web:3090/media/qq.png',
+        wx:'http://www.askmedo.cn/media/wx.png',
+        qq:'http://www.askmedo.cn/media/qq.png',
         resumeUrl:'http://www.askmedo.cn',
         showResumeUrl:false,
     },
