@@ -21,7 +21,7 @@ def get_media_url(file_name: str) -> str:
 
 def get_media_delete_url(file_name: str) -> str:
     file_name = file_name.strip("/")
-    media_delete_url = f"{settings.HOST}v1/common/delete/{file_name}/"
+    media_delete_url = f"{settings.HOST}/v1/common/delete/{file_name}/"
     if media_delete_url.startswith("http"):
         return media_delete_url
     return f"http://{media_delete_url}"

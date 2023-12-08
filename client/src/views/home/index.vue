@@ -28,7 +28,7 @@
               <div class="sidebar-card">
                 <div class="sidebar-avatar">
                   <img class="avatar-img lazy-image "
-                       :data-src="`https://www.vickyadrii.my.id/images/about-image.svg`">
+                       :data-src="`https://www.askmedo.cn/media/xiaomu.png`" src="https://www.askmedo.cn/media/xiaomu.png">
                 </div>
                 <div class="sidebar-name">{{ setting.websiteInfo.occupation }}</div>
                 <div class="sidebar-label">{{ setting.websiteInfo.occupationEn }}</div>

@@ -235,6 +235,10 @@ class ResourceViewSet(AccountViewSet):
     @action_record("资源管理/创建")
     @action(methods=["post"], detail=False, url_path="create-resource")
     def create_resource(self, request):
+        src_name = self.validated_data.get("src_name")
+        src = Resource.objects.filter(src_name=src_name)
+        if src.exists():
+            return APIResponse(data = ResourceSerializer(src.first()).data, message="添加资源管理成功.")
         media_url = get_media_url(self.validated_data.get("src_name"))
         media_delete_url = get_media_delete_url(self.validated_data.get("src_name"))
         self.validated_data["delete_path"] = media_delete_url
