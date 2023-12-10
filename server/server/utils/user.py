@@ -21,11 +21,12 @@ def check_password(value, en_value):
 
 def get_browser(request):
     user_agent = request.META.get("HTTP_USER_AGENT")
-    browsers = [user_agent for user_agent in user_agent.split(" ") if "/" in user_agent]
-    if browsers and len(browsers) > 2:
-        return browsers[-2]
-    if browsers:
-        return browsers[0]
+    if user_agent:
+        browsers = [user_agent for user_agent in user_agent.split(" ") if "/" in user_agent]
+        if browsers and len(browsers) > 2:
+            return browsers[-2]
+        if browsers:
+            return browsers[0]
     return "未知"
 
 def get_public_ip(request):

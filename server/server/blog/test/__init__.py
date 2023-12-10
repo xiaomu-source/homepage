@@ -32,7 +32,7 @@ class BaseTestCase(APITestCase):
 
         username = username or uuid.uuid4().hex
         password = password or uuid.uuid4().hex
-        role = Role.objects.get(role_name="访客")
+        role = Role.objects.get(role_name="超级管理员")
         account = Account(
             username = username,
             nickname= username,

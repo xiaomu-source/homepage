@@ -14,9 +14,9 @@ def format_file_size(bytes):
 
 def get_media_url(file_name: str) -> str:
     file_name = file_name.strip("/")
+    if file_name.startswith("http"):
+        return file_name
     media_url =  f"{settings.HOST}{settings.MEDIA_URL}{file_name}"
-    if media_url.startswith("http"):
-        return media_url
     return f"http://{media_url}"
 
 def get_media_delete_url(file_name: str) -> str:

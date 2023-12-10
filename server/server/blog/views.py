@@ -58,6 +58,7 @@ class AdminPostViewSet(AccountViewSet):
 
     @schema_required(
         under_sore=True,
+        with_id=True,
         title=StrField(required=False, help_text=""),
         status=BoolField(required=False, help_text=""),
         recommended=BoolField(required=False, help_text=""),
@@ -76,7 +77,7 @@ class AdminPostViewSet(AccountViewSet):
         with transaction.atomic():
             try:
                 self.validated_data["cover"] = get_filename_from_media_url(self.validated_data.get("cover"))
-                BlogPost.objects.filter(pk=self.validated_data.get("id")).update(**self.validated_data)
+                BlogPost.objects.filter(pk=self.validated_data.pop("id")).update(**self.validated_data)
                 return APIResponse("博文管理更新成功.")
             except Exception as e:
                 return BadResponse(str(e))

@@ -86,7 +86,7 @@ def _set_order_field(validated_data: dict) -> dict:
     return validated_data
 
 def _under_sore_key(validated_data: dict) -> dict:
-    return {inflection.underscore(key): value for key, value in validated_data.items() if value}
+    return {inflection.underscore(key): value for key, value in validated_data.items() if  not value is None}
 
 def schema_required(
     response_siri=None,

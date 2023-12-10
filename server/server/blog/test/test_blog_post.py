@@ -43,11 +43,26 @@ class AdminPostTestCase(AccountTestCase):
 
     def test_update(self):
         url = "/v1/blog/blog_articles/update-blog/"
-        data = {"_id": (id := BlogPost.objects.first().id), "title": (title := "狗哥是个 gay")}
+        data = {
+            "_id": (_id := BlogPost.objects.first().id),
+            "title": "day01",
+            "cover": "http://www.askmedo.cn/media/img.png",
+            "abstract": "123456",
+            "content": "123456",
+            "category": "随记",
+            "viewNum": 7,
+            "likeNum": 0,
+            "isReship": False,
+            "recommended": False,
+            "likeToken": None,
+            "status": True,
+            "createdAt": "2023-12-07 22:21:16",
+            "updatedAt": "2023-12-08 18:02:04"
+        }
         response = self.client.post(url, data=data)
-        blog_post = BlogPost.objects.get(id = id)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(blog_post.title, title)
+        detail = self.client.post("/v1/blog/blog_articles/client/get-detail/", data={"_id": _id})
+        self.assertEqual(detail.data["data"]["title"], data["title"])
 
 
 
