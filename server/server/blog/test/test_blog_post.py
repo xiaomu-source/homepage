@@ -25,14 +25,27 @@ class AdminPostTestCase(AccountTestCase):
                 "content": "content",
                 "remark": "remark",
                 "category": "category",
-                "is_reship": False,
-                "is_reship_url": "is_reship_url",
-                "is_reship_name": "is_reship_name",
-                "recommended": False,
+                "isReship": False,
+                "isReshipUrl": "is_reship_url",
+                "isReshipName": "is_reship_name",
+                "recommended": True,
+                "cover": "https://www.askmedo.cn/media/1.png",
                 "like_token": ["like_token"],
         }
         response = self.client.post(url, data=data)
         self.assertEqual(response.status_code, 200)
+        data = {
+            "params": {
+                "recommended": True,
+                "status": True
+            },
+            "pagination": {
+                "current": 1,
+                "pageSize": 3
+            }
+        }
+        post_list = self.client.post("/v1/blog/blog_articles/client/get-list/", data=data)
+        self.assertEqual(post_list.status_code, 200)
 
     def test_delete(self):
         url = "/v1/blog/blog_articles/delete-blog/"

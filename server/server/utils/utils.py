@@ -46,6 +46,8 @@ def filter_queryset_by_partial_match(model: models, params: dict) -> QuerySet:
         return model.objects.all()
     for key, value in params.items():
         lookup = f"{key}__icontains"
+        if isinstance(value, bool):
+            lookup = key
         query |= Q(**{lookup: value})
     queryset = model.objects.filter(query)
     return queryset
